@@ -15,7 +15,7 @@
 
     ul, ol { list-style: none; }
     a { text-decoration: none; color: #111; }
-    input, textarea { outline: none;  }
+    input, textarea { outline: none; }
 
     /* container */
     #container {
@@ -30,6 +30,9 @@
 
     /* 헤더 */
     header {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
         width: 100%;
         height: 120px;
         background: #eee;
@@ -37,34 +40,69 @@
         box-sizing: border-box;
     }
 
+    /* nav */
+    nav {
+        width: 100%;
+        height: 50px;
+        background: #ddd;
+        border: 1px dashed black;
+        box-sizing: border-box;
+    }
+
     /* 메인 */
     main {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
         width: 100%;
         min-height: 400px;
         margin: 10px 0;
-        padding: 0 0 10px 0;
         background: #eee;
         border: 1px dashed black;
         box-sizing: border-box;
         overflow: hidden;
     }
 
-    main > aside {
-        float: left;
+    main > nav {
+        margin-top: 10px;
+    }
+
+    .flexbox {
+        display: flex;
+        flex-direction: row;
+        padding: 10px 0 0 0;
+        justify-content: space-between;
+    }
+
+    .flexbox > aside {
         width: 198px;
         height: 400px;
-        margin-left: 10px;
         background: #ddd;
         border: 1px dashed black;
         box-sizing: border-box;
     }
 
-    main > section {
-        float: left;
+    .flexbox > section {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
         width: 400px;
         height: 400px;
-        margin-left: 10px;
+        padding-bottom: 10px;
         background: #ddd;
+        border: 1px dashed black;
+        box-sizing: border-box;
+    }
+
+    .flexbox > section > * {
+        flex: 1;
+        margin-top: 10px;
+    }
+
+    .flexbox > section > article {
+        width: 100%;
+        height: 168px;
+        background: #ccc;
         border: 1px dashed black;
         box-sizing: border-box;
     }
@@ -81,12 +119,21 @@
 
 <body>
     <div id="container">
-        <header>header</header>
-        <main>
-            <p>main</p>
-            <aside>aside #1</aside>
-            <aside>aside #2</aside>
-            <section>section</section>
+        <header> 
+            header 
+            <nav>nav</nav>
+        </header>
+        <main> 
+            main 
+            <nav>nav</nav>
+            <div class="flexbox">
+                <aside>aside #1</aside>
+                <section> section 
+                    <article>article #1</article>
+                    <article>article #2</article>
+                </section>
+                <aside>aside #2</aside>
+            </div>
         </main>
         <footer>footer</footer>
     </div>

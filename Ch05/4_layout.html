@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <title>Layout #3</title>
+        <title>Layout #4</title>
     </head>
     <style>
         /* 초기화 */
@@ -41,26 +41,30 @@
             width: 100%;
             min-height: 400px;
             margin: 10px 0;
-            padding: 10px;
+            padding-top: 0;
+            padding-left: 0;
             background: #eee;
             border: 1px dashed black;
             box-sizing: border-box;
+            overflow: hidden;
         }
 
         main > aside {
-            display: inline-block;
+            float: left;
             width: 216px;
+            margin-left: 10px;
             height: 400px;
-            background: #ccc;
+            background: #ddd;
             border: 1px dashed black;
             box-sizing: border-box;
         }
 
         main > section {
-            display: inline-block;
+            float: left;
             width: 530px;
             height: 400px;
-            background: #ccc;
+            margin-left: 10px;
+            background: #ddd;
             border: 1px dashed black;
             box-sizing: border-box;
         }

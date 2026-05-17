@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <title>Layout #5</title>
+        <title>Layout #6</title>
     </head>
     <style>
         /* 초기화 */
@@ -47,9 +47,9 @@
             box-sizing: border-box;
             overflow: hidden;
         }
-        
+
         main > aside {
-            float: right;
+            float: left;
             width: 216px;
             height: 400px;
             margin-left: 10px;
@@ -59,16 +59,30 @@
         }
 
         main > section {
-            float: right;
+            float: left;
+            display: flex;
+            flex-direction: column;
             width: 530px;
             height: 400px;
+            margin-left: 10px;
             background: #ddd;
+            border: 1px dashed black;
+            box-sizing: border-box;
+        }
+
+        main > section > * {
+            width: 100%;
+            flex: 1;
+            margin-top: 10px;
+            min-height: 168px;
+            background: #ccc;
             border: 1px dashed black;
             box-sizing: border-box;
         }
 
         /* 푸터 */
         footer {
+            flex: 1;
             width: 100%;
             height: 100px;
             background: #eee;
@@ -82,7 +96,11 @@
             <main>
                 <p>main</p>
                 <aside>aside</aside>
-                <section>section</section>
+                <section>
+                    section
+                    <article>article #1</article>
+                    <article>article #2</article>
+                </section>
             </main>
             <footer>footer</footer>
         </div>
